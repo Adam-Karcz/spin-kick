@@ -4,19 +4,24 @@ Simple app to train coding
 ### Development Plan for Chuck Norris Jokes React App
 
 #### 1. Preparation
-   - [ ] **Research:** Understand the requirements thoroughly. Read about the API that you are going to use.
-   - [ ] **Environment Setup:** Ensure Node.js and npm are installed. If not, install them.
+   - [x] **Research:** Understand the requirements thoroughly. Read about the API that you are going to use.
+   - [x] **Environment Setup:** Ensure Node.js and npm are installed. If not, install them.
 
 #### 2. Create a GitHub Repository
-   - [ ] **Repository:** Create a new repository on GitHub.
-   - [ ] **Clone:** Clone it to your local machine.
+   - [x] **Repository:** Create a new repository on GitHub.
+   - [x] **Clone:** Clone it to your local machine.
 
 #### 3. Bootstrap the React App
-   - [ ] **Create React App:** Use the create-react-app command to bootstrap your app.
-   - [ ] **Run the App:** Use npm start to run the app and ensure everything is working fine.
+   - [x] **Create React App:** Use the create-react-app command to bootstrap your app.
+   - [x] **Run the App:** Use npm start to run the app and ensure everything is working fine.
 
 #### 4. Plan the App’s Structure
    - [ ] **Components:** Identify the components you’ll need.
+        - index
+        - fetch component
+        - joke component
+        - category selection component
+        - main app
    - [ ] **State Management:** Decide on how you’ll manage the state (Context API, Redux, etc. if needed).
    - [ ] **Routing:** If multiple pages are required, plan for routing (though for a simple app like this, it might not be necessary).
 
