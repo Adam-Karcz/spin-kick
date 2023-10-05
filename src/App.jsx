@@ -4,6 +4,7 @@ import "./App.css";
 const BASE_API_URL = "https://api.chucknorris.io";
 
 function App() {
+  const [isLoading, setIsLoding] = useState(false);
   const [joke, setJoke] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [categories, setCategories] = useState([]);
@@ -12,6 +13,7 @@ function App() {
   const fetchJoke = useCallback(async () => {
     //function extracted from useEffect scope to be called by button
     try {
+      setIsLoding(true);
       const response = await fetch(
         `${BASE_API_URL}/jokes/random${
           jokeCategory ? "?category=" + jokeCategory : ""
@@ -21,6 +23,8 @@ function App() {
       setJoke(data.value);
     } catch (error) {
       setErrorMessage(error);
+    } finally {
+      setIsLoding(false);
     }
   }, [jokeCategory]);
 
@@ -33,7 +37,6 @@ function App() {
       try {
         const response = await fetch(`${BASE_API_URL}/jokes/categories`);
         const data = await response.json();
-        console.log(data);
         setCategories(data);
       } catch (error) {
         setErrorMessage(error);
@@ -45,31 +48,47 @@ function App() {
   const CategoriesList = () => {
     return categories.map((category) => {
       return (
-        <button key={category} onClick={() => setJokeCategory(category)}>
+        <button
+          key={category}
+          type="button"
+          aria-label={`Random joke from ${category} category`}
+          onClick={() => setJokeCategory(category)}
+        >
           {category}
         </button>
       );
     });
   };
 
-  console.log(jokeCategory);
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Spin Kick</h1>
+        <h1 className="App_title">Spin Kick</h1>
       </header>
-      <main>
-        <button
-          onClick={() => (jokeCategory ? setJokeCategory("") : fetchJoke())}
-        >
-          New totaly random joke
-        </button>
-        <p>{joke}</p>
-        {errorMessage && <p>{errorMessage}</p>}
-        <div>
+      <main className="App-content">
+        <div className="reload-field">
+          <button
+            type="button"
+            aria-label="Random joke of any category"
+            onClick={() => (jokeCategory ? setJokeCategory("") : fetchJoke())}
+          >
+            {!errorMessage ? "New totaly random joke" : "Try again!"}
+          </button>
+        </div>
+        <div className="category-field">
           <CategoriesList />
         </div>
+        <div className="joke-field">
+          {isLoading ? <p>Loading...</p> : <p>{joke}</p>}
+        </div>
+        <div className="error-field">
+          {errorMessage && <p>{errorMessage}</p>}
+        </div>
       </main>
+      <footer className="App-content">
+        <p>author: adam karcz</p>
+        <p>powered by: chucknorris.io</p>
+      </footer>
     </div>
   );
 }
