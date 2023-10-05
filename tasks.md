@@ -17,22 +17,17 @@ Simple app to train coding
 
 #### 4. Plan the App’s Structure
    - [ ] **Components:** Identify the components you’ll need.
-        - index
-        - fetch component
-        - joke component
-        - category selection component
-        - main app
    - [ ] **State Management:** Decide on how you’ll manage the state (Context API, Redux, etc. if needed).
    - [ ] **Routing:** If multiple pages are required, plan for routing (though for a simple app like this, it might not be necessary).
 
 #### 5. Fetch Data from API
-   - [ ] **API Call:** Write a function to fetch jokes from the Chuck Norris API.
-   - [ ] **Display Jokes:** Display the fetched jokes on the UI.
+   - [x] **API Call:** Write a function to fetch jokes from the Chuck Norris API.
+   - [x] **Display Jokes:** Display the fetched jokes on the UI.
 
 #### 6. Implement Category Selection
-   - [ ] **Fetch Categories:** Fetch joke categories from the API if available.
+   - [x] **Fetch Categories:** Fetch joke categories from the API if available.
    - [ ] **Dropdown Menu:** Create a dropdown menu to allow users to select a category.
-   - [ ] **Update API Call:** Modify the API call to fetch jokes based on the selected category.
+   - [x] **Update API Call:** Modify the API call to fetch jokes based on the selected category.
 
 #### 7. Style the App
    - [ ] **CSS/SCSS:** Style the components to make them visually appealing.
