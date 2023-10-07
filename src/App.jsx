@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./App.css";
+import "./App.scss";
 
 const BASE_API_URL = "https://api.chucknorris.io";
 
@@ -63,7 +63,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App_title">Spin Kick</h1>
+        <h1 className="App-title">Spin Kick</h1>
       </header>
       <main className="App-content">
         <div className="reload-field">
@@ -85,9 +85,29 @@ function App() {
           {errorMessage && <p>{errorMessage}</p>}
         </div>
       </main>
-      <footer className="App-content">
-        <p>author: adam karcz</p>
-        <p>powered by: chucknorris.io</p>
+      <footer className="App-footer">
+        <p>
+          Author:{" "}
+          <a
+            href="https://github.com/Adam-Karcz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Adam Karcz on GitHub"
+          >
+            Adam Karcz
+          </a>
+        </p>
+        <p>
+          Powered by:{" "}
+          <a
+            href="https://api.chucknorris.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Chuck Norris API website"
+          >
+            chucknorris.io
+          </a>
+        </p>
       </footer>
     </div>
   );
