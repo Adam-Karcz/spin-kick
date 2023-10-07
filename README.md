@@ -1,3 +1,13 @@
+# Simple app displaying Chuck Norris jokes 🥋
+
+## Purpose
+
+- train data fetching 🤸
+- start learning SCSS 🎓
+
+I should have titled it round-house-kick 🤷 🥺
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
