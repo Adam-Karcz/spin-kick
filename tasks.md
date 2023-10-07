@@ -16,9 +16,9 @@ Simple app to train coding
    - [x] **Run the App:** Use npm start to run the app and ensure everything is working fine.
 
 #### 4. Plan the App’s Structure
-   - [ ] **Components:** Identify the components you’ll need.
-   - [ ] **State Management:** Decide on how you’ll manage the state (Context API, Redux, etc. if needed).
-   - [ ] **Routing:** If multiple pages are required, plan for routing (though for a simple app like this, it might not be necessary).
+   - [x] **Components:** Identify the components you’ll need.
+   - [x] **State Management:** Decide on how you’ll manage the state (Context API, Redux, etc. if needed).
+   - [x] **Routing:** If multiple pages are required, plan for routing (though for a simple app like this, it might not be necessary).
 
 #### 5. Fetch Data from API
    - [x] **API Call:** Write a function to fetch jokes from the Chuck Norris API.
@@ -26,7 +26,7 @@ Simple app to train coding
 
 #### 6. Implement Category Selection
    - [x] **Fetch Categories:** Fetch joke categories from the API if available.
-   - [ ] **Dropdown Menu:** Create a dropdown menu to allow users to select a category.
+   - [x ] **Menu:** Create a menu to allow users to select a category.
    - [x] **Update API Call:** Modify the API call to fetch jokes based on the selected category.
 
 #### 7. Style the App
