@@ -7,24 +7,21 @@
 .App {
   display: grid;
   grid-template-rows: 6rem 1fr 6rem; 
-  height: 100vh; 
-  
+  height: 100vh;  
 }
 
 .App-header {
   grid-row: 1;
   justify-self: end;
+  animation: App-logo-spin infinite 15s linear;
 
-  .App-title{
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
+  .App-title {
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     color: $primary-color;
     text-shadow: 2px 2px $secondary-color;
-    animation: App-logo-spin infinite 5s linear;
     width: 20rem;
-        
-  }
+    }
 }
 
 .App-content {
@@ -82,8 +79,6 @@
       font-size: x-large;
       letter-spacing: 0.1rem;
       color: $primary-color;
-      
-
     }
   }
   .error-field{
