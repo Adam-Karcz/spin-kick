@@ -52,7 +52,9 @@ function App() {
           key={category}
           type="button"
           aria-label={`Random joke from ${category} category`}
-          onClick={() => setJokeCategory(category)}
+          onClick={() =>
+            !jokeCategory ? setJokeCategory(category) : fetchJoke()
+          }
         >
           {category}
         </button>
