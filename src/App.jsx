@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./App.scss";
+import menuIcon from "./Images/menu.svg";
 
 const BASE_API_URL = "https://api.chucknorris.io";
 
@@ -9,6 +10,9 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [categories, setCategories] = useState([]);
   const [jokeCategory, setJokeCategory] = useState("");
+  const [isCategoryMenuVisible, setIsCategoryMenuVisible] = useState(true);
+
+  console.log(isCategoryMenuVisible);
 
   const fetchJoke = useCallback(async () => {
     //function extracted from useEffect scope to be called by button
@@ -68,6 +72,14 @@ function App() {
       <main className="App-content">
         <div className="reload-field">
           <button
+            className="show-categories"
+            type="button"
+            aria-label="Show menu"
+            onClick={() => setIsCategoryMenuVisible(!isCategoryMenuVisible)}
+          >
+            <img src={menuIcon} alt="hamburger menu" />
+          </button>
+          <button
             type="button"
             aria-label="Random joke of any category"
             onClick={() => (jokeCategory ? setJokeCategory("") : fetchJoke())}
@@ -75,10 +87,14 @@ function App() {
             {!errorMessage ? "New totaly random joke" : "Try again!"}
           </button>
         </div>
-        <div className="category-field">
+        <div
+          className={`category-field ${isCategoryMenuVisible ? "visible" : ""}`}
+        >
           <CategoriesList />
         </div>
-        <div className="joke-field">
+        <div
+          className={`joke-field ${!isCategoryMenuVisible ? "stretch" : ""}`}
+        >
           {isLoading ? <p>Loading...</p> : <p>{joke}</p>}
         </div>
         <div className="error-field">
@@ -98,7 +114,7 @@ function App() {
           </a>
         </p>
         <p>
-          Powered by:{" "}
+          Powered by:
           <a
             href="https://api.chucknorris.io/"
             target="_blank"
