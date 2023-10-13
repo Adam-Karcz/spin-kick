@@ -26,12 +26,12 @@ Simple app to train coding
 
 #### 6. Implement Category Selection
    - [x] **Fetch Categories:** Fetch joke categories from the API if available.
-   - [x ] **Menu:** Create a menu to allow users to select a category.
+   - [x] **Menu:** Create a menu to allow users to select a category.
    - [x] **Update API Call:** Modify the API call to fetch jokes based on the selected category.
 
 #### 7. Style the App
-   - [ ] **CSS/SCSS:** Style the components to make them visually appealing.
-   - [ ] **Responsive Design:** Ensure that the app is mobile-responsive.
+   - [x] **CSS/SCSS:** Style the components to make them visually appealing.
+   - [x] **Responsive Design:** Ensure that the app is mobile-responsive.
 
 #### 8. Testing
    - [ ] **Unit Tests:** Write unit tests for your components and logic.
