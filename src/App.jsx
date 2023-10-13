@@ -56,7 +56,9 @@ function App() {
           key={category}
           type="button"
           aria-label={`Random joke from ${category} category`}
-          onClick={() => setJokeCategory(category)}
+          onClick={() =>
+            jokeCategory !== category ? setJokeCategory(category) : fetchJoke()
+          }
         >
           {category}
         </button>
@@ -67,7 +69,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Spin Kick</h1>
+        <h1 className="App-title">Roundhouse Kick</h1>
       </header>
       <main className="App-content">
         <div className="reload-field">
