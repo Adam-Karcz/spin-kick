@@ -1,0 +1,28 @@
+@import '../../variables';
+
+.App-footer {
+    grid-row: 3;
+    justify-self: end;
+    background-color: rgba($light-color, 0.1);
+    border-radius: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:0.5rem;
+    p{
+      color: $light-color;
+      padding: 0.2rem 1rem;
+      margin: 0;
+  
+      a{
+        color: $light-color;
+        text-decoration: none;
+  
+        &:hover{
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  
+  

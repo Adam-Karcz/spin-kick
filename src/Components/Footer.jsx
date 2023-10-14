@@ -1,3 +1,4 @@
+import "./Styles/Footer.scss";
 export const Footer = () => (
   <footer className="App-footer">
     <p>

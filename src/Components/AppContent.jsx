@@ -1,6 +1,7 @@
 import React from "react";
 import { CategoriesList } from "../Components/CategoriesList";
 import menuIcon from "../Images/menu.svg";
+import "./Styles/AppContent.scss";
 
 export const AppContent = ({
   setIsCategoryMenuVisible,

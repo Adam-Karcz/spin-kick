@@ -1,0 +1,28 @@
+@import '../../variables';
+
+.App-header {
+    grid-row: 1;
+    justify-self: end;
+    animation: App-logo-spin infinite 15s linear;
+  
+    .App-title {
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      color: $primary-color;
+      text-shadow: 2px 2px $secondary-color;
+      width: 20rem;
+      }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    5% {
+      transform: rotateY(360deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  } 
+  
