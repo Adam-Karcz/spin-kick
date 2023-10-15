@@ -13,6 +13,10 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [jokeCategory, setJokeCategory] = useState("");
   const [isCategoryMenuVisible, setIsCategoryMenuVisible] = useState(true);
+  const networkErrorMessage =
+    "You failed to fetch joke due to a network error, no Chuck for you.";
+  const serverErrorMessage =
+    "You've been roundhouse kicked! You failed to fetch";
 
   const fetchJoke = useCallback(async () => {
     //function extracted from useEffect scope to be called by button
@@ -23,14 +27,23 @@ function App() {
           jokeCategory ? "?category=" + jokeCategory : ""
         }`
       );
+
+      if (!response.ok) {
+        const text = await response.text();
+        console.error(`Error: ${response.status} - ${text}`);
+        setErrorMessage(
+          `Error: ${response.status} ${serverErrorMessage} joke.`
+        );
+        return;
+      }
       const data = await response.json();
       setJoke(data.value);
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage(networkErrorMessage);
     } finally {
       setIsLoding(false);
     }
-  }, [jokeCategory]);
+  }, [jokeCategory, serverErrorMessage]);
 
   useEffect(() => {
     fetchJoke();
@@ -40,14 +53,22 @@ function App() {
     async function fetchCategories() {
       try {
         const response = await fetch(`${BASE_API_URL}/jokes/categories`);
+        if (!response.ok) {
+          setErrorMessage(
+            `Error: ${response.status} ${serverErrorMessage} jokes categories.`
+          );
+          return;
+        }
         const data = await response.json();
         setCategories(data);
       } catch (error) {
-        setErrorMessage(error);
+        setErrorMessage(networkErrorMessage);
       }
     }
     fetchCategories();
-  }, []);
+  }, [serverErrorMessage]);
+
+  console.log(errorMessage);
 
   return (
     <div className="App">
